@@ -1,0 +1,11 @@
+version: '3'
+services:
+  webserver:
+    build: .
+    ports:
+     - "3000:3000"
+  redis-master:
+    image: redis:alpine
+  redis-slave:
+    image: redis:alpine
+    command: redis-server --slaveof redis-master 6379

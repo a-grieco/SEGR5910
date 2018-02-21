@@ -6,8 +6,10 @@ This will deploy the sample Guestbook application using Docker.
 ### Prerequisites
 
 You will need Docker installed [instructions here](https://docs.docker.com/install/).
-You will need to have Ubuntu saved as an image
-(if not, run the command `docker pull ubuntu`)
+
+You will need to have Ubuntu
+
+	If not, run the following in the command shell: `docker pull ubuntu`
 
 ## Getting Started
 
