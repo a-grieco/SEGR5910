@@ -45,7 +45,7 @@ In the command shell, cd into desired location and type:
 Deployment
 ----------
 
-In the command shell cd into the cloned repository:
+In the command shell, cd into the cloned repository:
 `cd SEGR5910`
 
 Run the following inside the SEGR5910 directory:
