@@ -9,17 +9,22 @@ Prerequisites
 
 You will need to have the following installed:
 
-_Git_
+__Git__
+
 Type the following into the command shell to verify:
 `git version`
-If not installed, click here for [download instructions] (https://git-scm.com/downloads)
 
-_Docker_ 
+If not installed, click here for [download instructions](https://git-scm.com/downloads).
+
+__Docker__
+
 Type the following into the command shell to verify:
 `docker version`
-If not installed, click here for [download instructions](https://docs.docker.com/install/)
 
-_Ubuntu_
+If not installed, click here for [download instructions](https://docs.docker.com/install/).
+
+__Ubuntu__
+
 To see if installed, enter the following in the command shell: 
 `docker images` 
 (If installed, 'ubuntu' will be listed under REPOSITORY.)
@@ -32,7 +37,8 @@ Getting Started
 ---------------
 
 Clone this repository.
-In the command shell, cd into desired location and enter the following:
+
+In the command shell, cd into desired location and type:
 `git clone https://github.com/a-grieco/SEGR5910.git`
 
 
@@ -45,7 +51,8 @@ In the command shell cd into the cloned repository:
 Run the following inside the SEGR5910 directory:
 `docker-compose up`
 
-When loading is complete, go to localhost:3000 in your browser.
+When loading is complete, go to 'localhost:3000' in your browser.
+
 The sample application should be running.
 
 
