@@ -25,17 +25,17 @@ How to improve and/or extend the solution if given more time
 
 I signed up for an account with Docker Cloud and if I had more time, I would push the application image to a registry and try to set up the service to be scalable. It doesn’t seem like the first step in this process would be too difficult, but I don’t trust that I have enough time to be able to make sure I can get it to work.
 
-From what I can tell from the documentation, for basic scalability, it seems all that needs to be done at this point is to tag the image, initialize Docker Swarm, and then deploy the stack using a modified docker-compose.yml. In addition, the modifications needed for basic scaling seem fairly straightforward (provided you know what the application requirements are). It would simply add requirements for the number of instances, how much CPU to use, when to replicate, etc. This would simply be the addition of a couple lines of code under the indicated services. 
+From what I can tell from the documentation, for basic scalability, all that needs to be done at this point is to tag the image, initialize Docker Swarm, and then deploy the stack using a modified docker-compose.yml. In addition, the modifications needed for basic scaling seem fairly straightforward (provided you know what the application requirements are). It would simply add requirements for the number of instances, how much CPU to use, when to replicate, etc. This would simply be the addition of a couple lines of code under the indicated services. 
 
 In the demo, they added the following lines to the .yml file under service in order to “[ru]n 5 instances of that image as a service called web, limiting each one to use, at most, 10% of the CPU (across all cores), and 50MB of RAM” and to “[i]mmediately restart containers if one fails.”
 
 > deploy:  
->       replicas: 5  
->       resources:  
->         limits:  
->           cpus: "0.1"  
->           memory: 50M  
->       restart_policy:  
->         condition: on-failure  
+> ...replicas: 5  
+> ...resources:  
+> ......limits:  
+> .........cpus: "0.1"  
+> .........memory: 50M  
+> ...restart_policy:  
+> .........condition: on-failure  
 
 This doesn’t seem too painful a step to be able to achieve scaling *manually*: by defining the number of instances for each of the services in the application. However, this is only one step toward being able to deploy the application in a means that is *production*-worthy. This doesn’t handle elastic/automatic scaling in the way that you would expect a proper Orchestrator to manage. It looks like there are several ways to do this: namely going the route of using Docker Swarm to set up containers on VMs to ultimately have more control over the infrastructure portion of deployment, or going in the direction of allowing cloud providers to do that sort of heavy lifting. That would take quite a bit more work than slightly modifying the .yml.
